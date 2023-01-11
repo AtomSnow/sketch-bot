@@ -1,5 +1,6 @@
 import { WebApi } from './webapi';
 import * as Discord from 'discord.js';
+// Won't work without intents
 import * as path from 'path';
 import { Stream, Readable } from 'stream';
 
