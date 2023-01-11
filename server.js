@@ -1,3 +1,4 @@
-var gulp = require('./gulpfile.js')
+var g = require('./gulpfile.js')
 
-gulp.start()
+// "Gulp is not a function", to be transformed to newer version of Node
+g.start()
