@@ -1,11 +1,17 @@
 import { WebApi } from './webapi';
-import * as Discord from 'discord.js';
-// Won't work without intents
+import * from 'discord.js'
 import * as path from 'path';
 import { Stream, Readable } from 'stream';
 
 export class DiscordBot {
-    private client = new Discord.Client();
+    private client = new Discord.Client({
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+ 		GatewayIntentBits.MessageContent,
+		GatewayIntentBits.GuildMembers,
+     	],
+    });
     public webapi: WebApi;
     public baseUrl = "";
     public started = false;
