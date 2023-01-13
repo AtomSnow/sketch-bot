@@ -1,5 +1,5 @@
 import { WebApi } from './webapi';
-import * from 'discord.js'
+import * as Discord from 'discord.js';
 import * as path from 'path';
 import { Stream, Readable } from 'stream';
 
