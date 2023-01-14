@@ -4,15 +4,10 @@ import * as path from 'path';
 import { Stream, Readable } from 'stream';
 
 export class DiscordBot {
-    private client = new Discord.Client({
-	intents: [
-		GatewayIntentBits.Guilds,
-		GatewayIntentBits.GuildMessages,
- 		GatewayIntentBits.MessageContent,
-		GatewayIntentBits.GuildMembers,
-     	],
-    });
+    private client = new Discord.Client();
+    // Intents not needed for now???
     public webapi: WebApi;
+    // TODO: Fill
     public baseUrl = "";
     public started = false;
 
@@ -43,8 +38,7 @@ export class DiscordBot {
             if (baseUrl.includes('localhost')) {
                 try {
                     if (
-                        message.member.user.id != '242516597170765824' &&
-                        message.member.user.id != '428251537312317441'
+                        message.member.user.id != '242554854868910080'
                     )
                         return
                 }
@@ -64,7 +58,8 @@ export class DiscordBot {
                 else message.channel.send(baseUrl + 'sketch/' + message.channel.id);
             }
             if (message.content.startsWith('<@528166288527327262>')) {
-                message.channel.send('ok')
+                // TODO: Replace ID
+                message.channel.send('Ok')
             }
         })
 
@@ -132,6 +127,7 @@ export class DiscordBot {
         }
         catch{ return null }
         if (message.member.user.id != '528166288527327262') return null;
+        // TODO: Replace ID
         let att = message.attachments.array()[0]
         if (att == null) { return null; }
         if (att.width == null || att.height == null) { return null; }
