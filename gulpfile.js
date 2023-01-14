@@ -14,14 +14,14 @@ function join(child) {
     }
     child.on('exit', (code, signal) => {
       if (code != null && code !== 0) {
-        const error = new Error(`process exited with code ${code}`)
+        const error = new Error(`Process exited with code ${code}`)
         const flowWorkaround = error
         flowWorkaround.code = code
         flowWorkaround.signal = null
         reject(error)
       }
       else if (signal) {
-        const error = new Error(`process exited with signal ${signal}`)
+        const error = new Error(`Process exited with signal ${signal}`)
         const flowWorkaround = error
         flowWorkaround.code = null
         flowWorkaround.signal = signal
@@ -62,7 +62,7 @@ async function pRun(command) {
   });
 
   run.on('exit', function (code) {
-    //console.log('child process exited with code ' + code.toString());
+    //console.log('Child process exited with code ' + code.toString());
   });
   await join(run)
 }
