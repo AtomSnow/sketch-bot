@@ -147,3 +147,5 @@ gulp.task('prod', async function(cb){
     await start();
   }
 })
+
+module.exports = { start };
