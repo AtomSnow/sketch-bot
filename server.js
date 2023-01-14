@@ -1,4 +1,4 @@
 var g = require('./gulpfile.js')
 
-// "Gulp is not a function", to be transformed to newer version of Node
+// TODO: Update to Gulp 4
 g.start()
